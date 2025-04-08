@@ -39,16 +39,31 @@ showCards(monsterArray);
 let monsterArrayCopy = monsterArray.map((monsterCopy) => ({ ...monsterCopy }));
 showCards(monsterArrayCopy);
 
-let randomPlacementCard = () => {
-  return Math.floor(Math.random() * 21);
-};
+// let randomPlacementCard = () => {
+//   return Math.floor(Math.random() * 21);
+// };
 
 const ring = () => {
   const audio = new Audio();
   audio.src = "audio/heureDuDuel.mp3";
   audio.play();
 };
+
+
 linkImage.addEventListener("click", () => {
-  console.log("Je clique");
   ring();
+  linkDisabled();
 });
+
+let isLinkDisabled = false;
+
+const linkDisabled = () => {
+  if (isLinkDisabled) return;
+  linkImage.classList.add("disabled")
+  isLinkDisabled = true
+
+  setTimeout(function() {
+    linkImage.classList.remove("disabled")
+    isLinkDisabled = false;
+  }, 4000);
+}

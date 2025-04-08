@@ -13,8 +13,8 @@ body {
 }
 .link-container:hover {
   text-shadow: 0px 0px 5px #00ffff;
-  transition: 0.4s ease-in-out;
-  filter: brightness(2.5);
+  transition: 0.3s ease-in-out;
+  filter: brightness(2);
   cursor: pointer;
 }
 
@@ -27,6 +27,10 @@ body {
   color: #ffffff;
   font-weight: bold;
   font-size: 140%;
+}
+
+.disabled {
+  pointer-events: none;
 }
 
 .card-container {
